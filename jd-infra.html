@@ -3,165 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DHOLERA FARMS DEALING</title>
+
+<title>JD Infra</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ffffff, #ffffff);
-    animation: fadeIn 1.2s ease-in;
+
+/* BODY */
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f5f5;
 }
 
-/* Fade In */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    background:black;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+/* LOGO */
+.logo{
+    color:gold;
+    font-size:32px;
+    font-weight:bold;
 }
 
-/* Menu Icon */
-.menu-icon {
-    font-size: 25px;
-    cursor: pointer;
-    transition: 0.3s;
+/* MENU */
+.nav-links{
+    display:flex;
+    gap:15px;
 }
 
-.menu-icon:hover {
-    transform: rotate(90deg);
+/* MENU BUTTON */
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    padding:10px 20px;
+    border-radius:25px;
+    background:linear-gradient(145deg,gold,#222);
+    transition:0.3s;
+    font-size:18px;
+    font-weight:bold;
 }
 
-/* Nav Links */
-.nav-links {
-    display: flex;
-    gap: 15px;
+/* HOVER */
+.nav-links a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(255,215,0,0.5);
 }
 
-.nav-links a {
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 25px;
-    background: linear-gradient(145deg, gold, black);
-    color: black;
-    font-weight: bold;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s;
+/* MENU ICON */
+.menu-icon{
+    display:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
 }
 
-/* Glow Hover */
-.nav-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(198, 147, 35, 0.6);
+/* LOGO IMAGE */
+.main-logo{
+    text-align:center;
+    margin-top:40px;
 }
 
-/* Shine Effect */
-.nav-links a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgb(255, 255, 255), transparent);
-    transition: 0.5s;
+.main-logo img{
+    width:80%;
+    max-width:600px;
 }
 
-.nav-links a:hover::before {
-    left: 100%;
-}
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
 
-/* Title */
-.title {
-    margin: 30px;
-    font-size: 28px;
-    font-weight: bold;
-    animation: slideDown 1s ease;
-}
-
-/* Slide animation */
-@keyframes slideDown {
-    from { transform: translateY(-30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* LOGO CENTER */
-img {
-    display: block;
-    margin: 50px auto;
-    max-width: 800px;
-}
-/* Logo Section */
-    .logo img {
-    width: 600px;
-    display: block;
-    margin: 50px auto;
-    animation: float 4s ease-in-out infinite;
-}
-
-/* Logo Animation */
-.logo img {
-    width: 600px;
-    animation: float 4s ease-in-out infinite, zoomIn 2s ease;
-}
-
-/* Floating Effect */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Zoom In */
-@keyframes zoomIn {
-    from {
-        transform: scale(1);
-        opacity: 1;
+    /* FONT SIZE SMALL */
+    .logo{
+        font-size:24px;
     }
-    to {
-        transform: scale(1);
-        opacity: 1;
+
+    .menu-icon{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:black;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        display:none;
+        padding:20px 0;
+    }
+
+    .nav-links a{
+        width:80%;
+        text-align:center;
+        margin:8px 0;
+        font-size:16px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .main-logo img{
+        width:95%;
     }
 }
-
 
 </style>
-
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo-text">JD Infra</div>
 
-    <div class="nav-links">
+    <!-- LOGO -->
+    <div class="logo">
+        JD Infra
+    </div>
+
+    <!-- MENU -->
+    <div class="nav-links" id="menu">
+
         <a href="home.html">Home</a>
+
         <a href="services.html">Services</a>
+
         <a href="gallery.html">Gallery</a>
+
         <a href="feedback.html">Feedback</a>
-    </div>
-
-    <div class="menu-icon">☰</div>
 
     </div>
+
+    <!-- MENU ICON -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </div>
+
 </div>
 
-<!--LOGO-->
-<div class="logo">
+<!-- MAIN LOGO -->
+<div class="main-logo">
+
     <img src="55.png" alt="JD Infra Logo">
+
 </div>
 
+<!-- JAVASCRIPT -->
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("menu")
+    .classList
+    .toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>
