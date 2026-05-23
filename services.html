@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> services</title>
+<title>Services</title>
 
 <style>
 
@@ -13,6 +13,22 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: #000;
     color: #f5d27a;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #111;
+    border-bottom: 2px solid #d4af37;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d4af37;
 }
 
 /* Nav Links */
@@ -55,7 +71,6 @@ body {
     left: 100%;
 }
 
-
 /* HERO */
 .hero {
     text-align: center;
@@ -90,11 +105,16 @@ body {
     transform: scale(1.05);
 }
 
-
 /* CARDS */
 .section {
     padding: 50px 20px;
     text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: #d4af37;
+    margin-bottom: 40px;
 }
 
 .card-container {
@@ -113,11 +133,14 @@ body {
     transition: 0.3s;
 }
 
+.card h3 {
+    color: #d4af37;
+}
+
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px #d4af37;
 }
-
 
 /* FOOTER */
 .footer {
@@ -137,6 +160,12 @@ body {
     padding: 15px;
     border-radius: 50%;
     text-decoration: none;
+    font-size: 24px;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #25D366;
 }
 
 </style>
@@ -151,8 +180,7 @@ body {
         <a href="home.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
-        <a href="feedback.html">feedback</a>
-
+        <a href="feedback.html">Feedback</a>
     </div>
 </div>
 
@@ -160,25 +188,29 @@ body {
 <div class="hero">
     <h1>Dholera Smart City</h1>
     <p>Premium Investment Opportunity</p>
-    <button class="btn">Get Started</button>
+    <button class="btn" onclick="alert('Get Started clicked!')">Get Started</button>
 </div>
 
-<!-- PROJECTS -->
+<!-- PROJECTS/SERVICES -->
 <div class="section">
-    <h2>Our Projects</h2>
+    <h2>Our Services</h2>
     <div class="card-container">
-        
-
         <div class="card">
-            <h3>Farm Land</h3>
-            <p>Peaceful and profitable investment.</p>
+            <h3>🌾 Farm Land</h3>
+            <p>Peaceful and profitable investment opportunities in premium farm land.</p>
         </div>
 
-        
+        <div class="card">
+            <h3>🏗️ Infrastructure</h3>
+            <p>World-class infrastructure development and smart city solutions.</p>
+        </div>
 
+        <div class="card">
+            <h3>💰 Investment</h3>
+            <p>High returns on residential and commercial properties.</p>
+        </div>
     </div>
 </div>
-
 
 <!-- FOOTER -->
 <div class="footer">
@@ -187,8 +219,7 @@ body {
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/918460190909?text=Hello%20JD%20Infra,%20I%20am%20interested%20in%20Dholera%20plots" 
-    class="whatsapp-btn" target="_blank">💬</a>
-
+    class="whatsapp-btn" target="_blank" title="Chat with us">💬</a>
 
 </body>
 </html>
