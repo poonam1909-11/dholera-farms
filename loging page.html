@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JD Infra Login</title>
+
+<style>
+
+/* BODY */
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* GLOW BACKGROUND */
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:gold;
+    border-radius:50%;
+    filter:blur(150px);
+    opacity:0.25;
+    animation:moveGlow 6s infinite alternate;
+}
+
+@keyframes moveGlow{
+
+    from{
+        transform:translate(-100px,-50px);
+    }
+
+    to{
+        transform:translate(100px,50px);
+    }
+}
+
+/* LOGIN BOX */
+.login-box{
+    position:relative;
+    width:350px;
+    padding:40px;
+    background:rgba(20,20,20,0.92);
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(255,215,0,0.3);
+    backdrop-filter:blur(10px);
+    text-align:center;
+    animation:zoomIn 1s ease;
+}
+
+/* ZOOM */
+@keyframes zoomIn{
+
+    from{
+        transform:scale(0.7);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* LOGO */
+.logo{
+    width:120px;
+    margin-bottom:15px;
+
+    filter:
+    drop-shadow(0 0 10px gold)
+    drop-shadow(0 0 20px gold);
+
+    animation:
+    floating 4s ease-in-out infinite,
+    glow 2s infinite alternate;
+}
+
+/* FLOAT */
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* GLOW */
+@keyframes glow{
+
+    from{
+        filter:
+        drop-shadow(0 0 10px gold)
+        drop-shadow(0 0 20px gold);
+    }
+
+    to{
+        filter:
+        drop-shadow(0 0 25px gold)
+        drop-shadow(0 0 50px gold);
+    }
+}
+
+/* TITLE */
+h1{
+    color:gold;
+    margin-bottom:25px;
+    font-size:32px;
+}
+
+/* INPUT */
+.input-box{
+    width:100%;
+    margin:15px 0;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:30px;
+    background:#111;
+    color:white;
+    font-size:16px;
+    box-shadow:0 0 10px rgba(255,215,0,0.2);
+}
+
+/* BUTTON */
+.login-btn{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(145deg,gold,#222);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+/* HOVER */
+.login-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px gold;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+    .login-box{
+        width:85%;
+        padding:30px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN BOX -->
+<div class="login-box">
+
+    <!-- LOGO -->
+    <img src="55.png" alt="JD Infra Logo" class="logo">
+
+    <!-- TITLE -->
+    <h1>Login</h1>
+
+    <!-- USERNAME -->
+    <div class="input-box">
+        <input type="text" placeholder="Enter Username">
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="input-box">
+        <input type="password" placeholder="Enter Password">
+    </div>
+
+    <!-- BUTTON -->
+    <button class="login-btn" onclick="goToHome()">
+        Get Start
+    </button>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+function goToHome(){
+
+    window.location.href = "index.html";
+
+}
+
+</script>
+
+</script>
+
+</body>
+</html>
