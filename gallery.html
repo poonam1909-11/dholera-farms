@@ -12,6 +12,20 @@ body {
     background: #0f0f0f;
     color: white;
 }
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #111;
+    border-bottom: 2px solid #d4af37;
+}
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d4af37;
+}
 
 /* HEADER */
 header {
@@ -134,6 +148,51 @@ footer {
     border-radius: 50%;
     text-decoration: none;
 }
+
+
+/* DIRECTION BUTTON */
+.direction-btn{
+
+    display:inline-block;
+    padding:15px 30px;
+
+    background:linear-gradient(145deg,gold,#111);
+
+    color:white;
+    text-decoration:none;
+
+    font-size:18px;
+    font-weight:bold;
+
+    border-radius:40px;
+
+    transition:0.4s;
+
+    box-shadow:0 0 15px rgba(255,215,0,0.4);
+
+}
+
+/* HOVER EFFECT */
+.direction-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 20px gold,
+    0 0 40px gold;
+
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .direction-btn{
+
+        font-size:15px;
+        padding:12px 20px;
+
+    }
+}
 </style>
 </head>
 
@@ -212,16 +271,18 @@ footer {
 </iframe>
 </div>
 
-</div>
-
+<!-- BUTTON -->
 <div style="text-align:center; margin-top:20px;">
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Dholera+Smart+City+Gujarat"
-        target="_blank"
-        class="direction-btn">
-        Get Directions to Dholera
-    </a>
-</div> 
 
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Dholera+Smart+City+Gujarat"
+    target="_blank"
+    class="direction-btn">
+
+    📍 Get Directions to Dholera
+
+    </a>
+
+</div>
 
 
 <div class="section">
