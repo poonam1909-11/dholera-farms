@@ -116,22 +116,128 @@ body{
         width:95%;
     }
 }
-/* Floating Effect */
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
+/* ===================================== */
+/* MOBILE RESPONSIVE AUTO FONT SIZE */
+/* ===================================== */
+
+/* BODY */
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI',sans-serif;
+    overflow-x:hidden;
 }
-/* Zoom In */
-@keyframes zoomIn {
-    from {
-        transform: scale(1);
-        opacity: 1;
-        }
-    to {
-        transform: scale(1); opacity: 1; 
-    } 
+
+/* IMAGES AUTO FIT */
+img{
+    max-width:100%;
+    height:auto;
 }
+
+/* TEXT AUTO RESPONSIVE */
+h1{
+    font-size:clamp(28px,5vw,60px);
+}
+
+h2{
+    font-size:clamp(24px,4vw,45px);
+}
+
+h3{
+    font-size:clamp(20px,3vw,35px);
+}
+
+p{
+    font-size:clamp(14px,2vw,18px);
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:15px 20px;
+}
+
+/* LOGO */
+.logo-text{
+    font-size:clamp(22px,4vw,35px);
+}
+
+/* MENU */
+.nav-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+/* MENU BUTTON */
+.nav-links a{
+
+    text-decoration:none;
+
+    padding:
+    clamp(8px,2vw,12px)
+    clamp(14px,3vw,24px);
+
+    font-size:clamp(14px,2vw,18px);
+
+    border-radius:30px;
+}
+
+/* BUTTON */
+button,
+.direction-btn{
+
+    font-size:clamp(14px,2vw,18px);
+
+    padding:
+    clamp(10px,2vw,14px)
+    clamp(18px,4vw,30px);
+
+}
+
+/* INPUT */
+input,
+textarea{
+
+    width:100%;
+    box-sizing:border-box;
+
+    font-size:clamp(14px,2vw,18px);
+
+    padding:12px;
+}
+
+/* MAIN SECTION */
+section{
+    padding:40px 20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .nav-links{
+        justify-content:center;
+    }
+
+    .nav-links a{
+        width:90%;
+        text-align:center;
+    }
+
+    section{
+        padding:30px 15px;
+    }
+}
+
 </style>
 </head>
 
