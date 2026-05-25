@@ -3,15 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dholera Plot Price Comparison</title>
+<title>feedback</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
-}
 /* NAVBAR */
 .navbar {
     display: flex;
@@ -27,15 +21,7 @@ body {
     color: #d4af37;
 }
 
-/* HEADER */
-header {
-    color: rgb(251, 248, 248);
-    padding: 15px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-/* Nav Links */
+ /* Nav Links */
 .nav-links {
     display: flex;
     gap: 15px;
@@ -45,7 +31,7 @@ header {
     text-decoration: none;
     padding: 10px 22px;
     border-radius: 25px;
-    background: linear-gradient(145deg, gold, rgb(239, 236, 236));
+    background: linear-gradient(145deg, gold, rgb(239, 238, 238));
     color: black;
     font-weight: bold;
     position: relative;
@@ -56,7 +42,7 @@ header {
 /* Glow Hover */
 .nav-links a:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(224, 164, 34, 0.6);
+    box-shadow: 0 8px 20px rgba(198, 147, 35, 0.6);
 }
 
 /* Shine Effect */
@@ -75,67 +61,60 @@ header {
     left: 100%;
 }
 
-
-/* SECTION */
-.section {
-    padding: 30px;
-}
-
-h2 {
-    color: #facc15;
-}
-
-/* CARDS */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    flex: 1;
-    min-width: 280px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #101010;
-    box-shadow: 0 0 15px rgba(255,255,255,0.1);
-}
-
-.card h3 {
-    margin-top: 0;
-}
-
-/* COLORS */
-.cheap { border-left: 5px solid #22c55e; }
-.mid { border-left: 5px solid #facc15; }
-.premium { border-left: 5px solid #ef4444; }
-
-/* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    border: 1px solid #334155;
-    padding: 10px;
+.feedback {
+    background: #000;
+    color: #d4af37;
     text-align: center;
+    padding: 50px 20px;
 }
 
-th {
-    background: #facc15;
-    color: black;
+.feedback h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.feedback form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.feedback input,
+.feedback textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #d4af37;
+    background: transparent;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.feedback input::placeholder,
+.feedback textarea::placeholder {
+    color: #aaa;
+}
+
+.feedback button {
+    background: linear-gradient(145deg, #d4af37, #b8962e);
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.feedback button:hover {
+    background: gold;
 }
 
 /* FOOTER */
-footer {
+.footer {
     text-align: center;
-    padding: 15px;
-    background: #020617;
-    color: #94a3b8;
+    padding: 20px;
+    background: #111;
+    border-top: 2px solid #d4af37;
 }
-
 
 /* WhatsApp */
 .whatsapp-btn {
@@ -149,56 +128,11 @@ footer {
     text-decoration: none;
 }
 
-
-/* DIRECTION BUTTON */
-.direction-btn{
-
-    display:inline-block;
-    padding:15px 30px;
-
-    background:linear-gradient(145deg,gold,#111);
-
-    color:white;
-    text-decoration:none;
-
-    font-size:18px;
-    font-weight:bold;
-
-    border-radius:40px;
-
-    transition:0.4s;
-
-    box-shadow:0 0 15px rgba(255,215,0,0.4);
-
-}
-
-/* HOVER EFFECT */
-.direction-btn:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 0 20px gold,
-    0 0 40px gold;
-
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-    .direction-btn{
-
-        font-size:15px;
-        padding:12px 20px;
-
-    }
-}
 </style>
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
+<!-- NAVBAR -->
 <div class="navbar">
     <div class="logo-text">JD Infra</div>
     <div class="nav-links">
@@ -209,146 +143,27 @@ footer {
     </div>
 </div>
 
+<section class="feedback">
+    <h2>Feedback Form</h2>
 
-<header>
-🏡 Dholera Smart City Plot Price Comparison
-</header>
-
-<div class="section">
-<h2>💰 Price Categories</h2>
-
-<div class="container">
-
-<div class="card cheap">
-<h3>🟢 Cheap farms</h3>
-<p><b>Price:</b> ₹600 – ₹5,000 / sq yd</p>
-<p><b>Total:</b> ₹3 – ₹8 lakh</p>
-<p><b>Location:</b> Outside SIR / far areas</p>
-<ul>
-<li>Low investment</li>
-<li>High risk</li>
-<li>Slow growth</li>
-</ul>
-</div>
-
-<div class="card mid">
-<h3>🟡 Mid-Range farms</h3>
-<p><b>Price:</b> ₹6,000 – ₹9,000 / sq yd</p>
-<p><b>Total:</b> ₹8 – ₹15 lakh</p>
-<p><b>Location:</b> Developing zones</p>
-<ul>
-<li>Balanced investment</li>
-<li>Moderate growth</li>
-<li>Safer than cheap</li>
-</ul>
-</div>
-
-<div class="card premium">
-<h3>🔴 Premium farms</h3>
-<p><b>Price:</b> ₹10,000 – ₹18,000+ / sq yd</p>
-<p><b>Total:</b> ₹15 – ₹30 lakh+</p>
-<p><b>Location:</b> Near Airport / Expressway</p>
-<ul>
-<li>High demand</li>
-<li>Fast ROI</li>
-<li>Low risk</li>
-</ul>
-</div>
-
-</div>
-</div>
-<div class="section">
-<h2>📍 Dholera Smart City Location</h2>
-
-<div style="width:100%; height:400px; border-radius:12px; overflow:hidden;">
-<iframe 
-    src="https://maps.google.com/maps?q=Dholera%20Smart%20City&t=&z=11&ie=UTF8&iwloc=&output=embed"
-    width="100%" 
-    height="100%" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy">
-</iframe>
-</div>
-
-<!-- BUTTON -->
-<div style="text-align:center; margin-top:20px;">
-
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Dholera+Smart+City+Gujarat"
-    target="_blank"
-    class="direction-btn">
-
-    📍 Get Directions to Dholera
-
-    </a>
-
-</div>
-
-
-<div class="section">
-<h2>⚖️ Comparison Table</h2>
-
-<table>
-<tr>
-<th>Factor</th>
-<th>Cheap</th>
-<th>Mid</th>
-<th>Premium</th>
-</tr>
-
-<tr>
-<td>Price</td>
-<td>Low</td>
-<td>Medium</td>
-<td>High</td>
-</tr>
-
-<tr>
-<td>Location</td>
-<td>Far</td>
-<td>Developing</td>
-<td>Prime</td>
-</tr>
-
-<tr>
-<td>Infrastructure</td>
-<td>❌ No</td>
-<td>⚠️ Partial</td>
-<td>✅ Full</td>
-</tr>
-
-<tr>
-<td>Risk</td>
-<td>High</td>
-<td>Medium</td>
-<td>Low</td>
-</tr>
-
-<tr>
-<td>ROI Speed</td>
-<td>Slow</td>
-<td>Moderate</td>
-<td>Fast</td>
-</tr>
-
-<tr>
-<td>Resale</td>
-<td>Hard</td>
-<td>Normal</td>
-<td>Easy</td>
-</tr>
-
-</table>
-</div>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/918460190909?text=Hello%20JD%20Infra,%20I%20am%20interested%20in%20Dholera%20plots" 
-    class="whatsapp-btn" target="_blank">💬</a>
-
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        
+        <input type="email" placeholder="Your Email" required>
+        
+        <textarea placeholder="Your Feedback" rows="5" required></textarea>
+        
+        <button type="submit">Submit Feedback</button>
+    </form>
+</section>
 
 <footer>
 © 2026 Dholera Property Guide | Designed by You 🚀
 </footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/918460190909?text=Hello%20JD%20Infra,%20I%20am%20interested%20in%20Dholera%20plots" 
+    class="whatsapp-btn" target="_blank">💬</a>
 
 </body>
 </html>
