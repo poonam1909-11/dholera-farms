@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>home</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<title>Services</title>
+
 <style>
+
+/* BODY */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #000000, #121212);
-    color: #fff;
+    background: #000;
+    color: #f5d27a;
 }
 
 /* NAVBAR */
@@ -18,21 +20,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid gold;
+    padding: 15px 30px;
+    background: #111;
+    border-bottom: 2px solid #d4af37;
 }
 
 .logo-text {
     font-size: 28px;
     font-weight: bold;
-    color: gold;
-}
-
-/* MAIN SECTION */
-.section {
-    width: 90%;
-    margin: 40px auto;
+    color: #d4af37;
 }
 
 /* Nav Links */
@@ -45,7 +41,7 @@ body {
     text-decoration: none;
     padding: 10px 22px;
     border-radius: 25px;
-    background: linear-gradient(145deg, gold, rgb(244, 241, 241));
+    background: linear-gradient(145deg, gold, rgb(237, 235, 235));
     color: black;
     font-weight: bold;
     position: relative;
@@ -53,11 +49,13 @@ body {
     transition: 0.3s;
 }
 
+/* Glow Hover */
 .nav-links a:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(198, 147, 35, 0.6);
 }
 
+/* Shine Effect */
 .nav-links a::before {
     content: "";
     position: absolute;
@@ -73,147 +71,86 @@ body {
     left: 100%;
 }
 
-/* STATS SECTION */
-.stats {
-    display: flex;
-    justify-content: space-between;
-    background: linear-gradient(135deg, #b8962e, #ffd700, #b8962e);
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.stat-box {
-    background: #0a0a0a;
-    color: #ffd700;
-    width: 23%;
+/* HERO */
+.hero {
     text-align: center;
-    padding: 25px 10px;
-    border-radius: 12px;
-    border: 1px solid #ffd70050;
-    transition: 0.3s;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #000, #1a1a1a);
 }
 
-.stat-box:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 15px #ffd700;
+.hero h1 {
+    font-size: 50px;
+    color: #d4af37;
 }
 
-.stat-box i {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #ffd700;
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.stat-box h2 {
-    margin: 10px 0;
-    font-size: 26px;
-}
-
-.stat-box p {
-    margin: 0;
-    font-size: 14px;
-    color: #ddd;
-}
-
-/* INVESTORS SECTION */
-.investors {
-    margin-top: 40px;
-    background: linear-gradient(135deg, #b8962e, #ffd700, #b8962e);
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.investors h2 {
+/* BUTTON */
+.btn {
+    background: #d4af37;
     color: #000;
-    margin-bottom: 20px;
+    padding: 12px 25px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
     font-weight: bold;
-}
-
-.logo-box {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.logo-box img {
-    height: 60px;
-    margin: 10px;
     transition: 0.3s;
 }
 
-.logo-box img:hover {
-    transform: scale(1.1);
+.btn:hover {
+    background: #f5d27a;
+    transform: scale(1.05);
 }
 
-.logo-slider {
-    overflow: hidden;
-    background: #f8ec67;
-    padding: 20px 0;
-    border-radius: 10px;
-}
-
-.slider-track {
-    display: flex;
-    width: calc(250px * 8);
-    animation: scroll 20s linear infinite;
-}
-
-.slider-track img {
-    width: 200px;
-    height: 60px;
-    margin: 0 25px;
-    object-fit: contain;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* DHOLERA SECTION */
-.dholera {
-    background: linear-gradient(135deg, gold, #000000);
-    padding: 40px;
-    margin: 40px;
-    border-radius: 10px;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.dholera h2 {
+/* CARDS */
+.section {
+    padding: 50px 20px;
     text-align: center;
-    margin-bottom: 20px;
-    color: gold;
 }
 
-.dholera p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+.section h2 {
+    font-size: 36px;
+    color: #d4af37;
+    margin-bottom: 40px;
 }
 
-.dholera ul {
-    list-style: none;
-    padding: 0;
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.dholera ul li {
-    background: rgb(34, 32, 32);
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 5px solid gold;
+.card {
+    background: #111;
+    border: 1px solid #d4af37;
+    margin: 15px;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-/* WhatsApp Button */
+.card h3 {
+    color: #d4af37;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #d4af37;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    border-top: 2px solid #d4af37;
+}
+
+/* WhatsApp */
 .whatsapp-btn {
     position: fixed;
     bottom: 20px;
@@ -224,20 +161,310 @@ body {
     border-radius: 50%;
     text-decoration: none;
     font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
 }
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #25D366;
+}
+/* Responsive Website */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    overflow-x:hidden;
+    font-family:Arial, sans-serif;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:10px 20px;
+}
+
+/* Menu Buttons */
+nav a{
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:18px;
+    text-decoration:none;
+}
+
+/* Cards Section */
+.cards-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    width:100%;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    padding:20px;
+    border-radius:20px;
+}
+
+/* Images */
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* Mobile View */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav a{
+        width:90%;
+        text-align:center;
+        font-size:16px;
+    }
+
+    h1{
+        font-size:32px;
+        text-align:center;
+    }
+
+    .cards-container{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+
+    .cards-container{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    nav a{
+        font-size:15px;
+        padding:10px;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    font-family:Arial,sans-serif;
+}
+
+/* Main Container */
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:10px;
+}
+
+/* Navbar */
+nav{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:10px;
+}
+
+/* Menu Buttons */
+nav a{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:18px;
+    white-space:nowrap;
+}
+
+/* All Sections */
+section{
+    width:100%;
+    padding:20px 10px;
+}
+
+/* Cards */
+.cards-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    width:100%;
+}
+
+/* Single Card */
+.card{
+    width:100%;
+    border-radius:20px;
+    padding:20px;
+}
+
+/* Images */
+img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* Headings */
+h1{
+    font-size:50px;
+    text-align:center;
+}
+
+h2{
+    font-size:35px;
+}
+
+/* ===== TABLET ===== */
+@media screen and (max-width:768px){
+
+    h1{
+        font-size:34px;
+    }
+
+    h2{
+        font-size:26px;
+    }
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav a{
+        width:90%;
+        text-align:center;
+        font-size:16px;
+    }
+
+    .cards-container{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media screen and (max-width:480px){
+
+    h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    .cards-container{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    nav a{
+        width:100%;
+        font-size:15px;
+        padding:10px;
+    }
+}
+/* Mobile Responsive Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    background: linear-gradient(to right, #ffd700, #fff2a8);
+    color: black;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Mobile Size */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 35px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+        padding: 8px 14px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+
+    .nav-links {
+        gap: 6px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+}
+
 </style>
 </head>
 
 <body>
-
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
 <div class="navbar">
     <div class="logo-text">JD Infra</div>
+
     <div class="nav-links">
         <a href="home.html">Home</a>
         <a href="services.html">Services</a>
@@ -246,61 +473,43 @@ body {
     </div>
 </div>
 
-<div class="section">
-    <!-- STATS -->
-    <div class="stats">
-        <div class="stat-box">
-            <i class="fas fa-handshake"></i>
-            <h2>Buy Farms</h2>
-            <p>Happy Customers</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-map-marker-alt"></i>
-            <h2>Best Farms</h2>
-            <p>Bigha Land</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-calendar"></i>
-            <h2>12+</h2>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-car"></i>
-            <h2>Best Transport</h2>
-            <p>From Ahmedabad</p>
-        </div>
-    </div>
-
-    <!-- INVESTORS -->
-    <div class="investors">
-        <h2>Major Investors Driving Dholera's Development</h2>
-        <div class="logo-box">
-            <img src="11.png" alt="Adani">
-            <img src="22.png" alt="Tata">
-            <img src="33.png" alt="ReNew Power">
-            <img src="44.png" alt="HP">
-        </div>
-    </div>
-
-    <!-- DHOLERA SECTION -->
-    <section class="dholera">
-        <h2>Dholera Smart City (SIR)</h2>
-        <p>
-            <strong>Dholera Special Investment Region (SIR)</strong> in Gujarat is India's first greenfield smart city and a premier industrial node under the Delhi-Mumbai Industrial Corridor (DMIC).
-        </p>
-        <ul>
-            <li><strong>Location & Scope:</strong> Situated near Ahmedabad, Gujarat, Dholera is a large-scale planned industrial smart city.</li>
-            <li><strong>Infrastructure:</strong> Offers plug-and-play infrastructure, underground utilities, smart systems, and sustainable development.</li>
-            <li><strong>Semiconductor Hub:</strong> Home to India's first semiconductor fabrication plant led by Tata Semiconductor Manufacturing Pvt. Ltd.</li>
-            <li><strong>Connectivity:</strong> Connected via expressway, upcoming metro rail, and international airport.</li>
-            <li><strong>Economic Growth:</strong> Designed to boost industrial development, jobs, and foreign investment.</li>
-            <li><strong>City Planning:</strong> Includes residential, commercial, industrial zones and green spaces.</li>
-        </ul>
-    </section>
+<!-- HERO -->
+<div class="hero">
+    <h1>Dholera Smart City</h1>
+    <p>Premium Investment Opportunity</p>
+    <button class="btn" onclick="alert('Get Started clicked!')">Get Started</button>
 </div>
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/918460190909?text=Hello%20JD%20Infra,%20I%20am%20interested%20in%20Dholera%20plots" class="whatsapp-btn" target="_blank">💬</a>
+<!-- PROJECTS/SERVICES -->
+<div class="section">
+    <h2>Our Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>🌾 Farm Land</h3>
+            <p>Peaceful and profitable investment opportunities in premium farm land.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏗️ Infrastructure</h3>
+            <p>World-class infrastructure development and smart city solutions.</p>
+        </div>
+
+        <div class="card">
+            <h3>💰 Investment</h3>
+            <p>High returns on residential and commercial properties.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 JD Infra | All Rights Reserved
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/918460190909?text=Hello%20JD%20Infra,%20I%20am%20interested%20in%20Dholera%20plots" 
+    class="whatsapp-btn" target="_blank" title="Chat with us">💬</a>
 
 </body>
 </html>
+       
