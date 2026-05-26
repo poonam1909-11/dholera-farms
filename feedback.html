@@ -4,109 +4,105 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>feedback</title>
-
 <style>
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: #111;
-    border-bottom: 2px solid #d4af37;
-}
-.logo-text {
-    font-size: 28px;
-    font-weight: bold;
-    color: #d4af37;
+body{
+    background:black;
+    font-family:Arial;
+    color:white;
 }
 
- /* Nav Links */
-.nav-links {
-    display: flex;
-    gap: 15px;
+.login-container{
+    width:90%;
+    max-width:400px;
+    margin:30px auto;
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px gold;
 }
 
-.nav-links a {
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 25px;
-    background: linear-gradient(145deg, gold, rgb(239, 238, 238));
-    color: black;
-    font-weight: bold;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s;
+.login-container h2{
+    text-align:center;
+    color:gold;
 }
 
-/* Glow Hover */
-.nav-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(198, 147, 35, 0.6);
+.login-container input{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
 }
 
-/* Shine Effect */
-.nav-links a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgb(255, 255, 255), transparent);
-    transition: 0.5s;
+.login-container button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:gold;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.nav-links a:hover::before {
-    left: 100%;
+.table-container{
+    width:95%;
+    margin:30px auto;
+    overflow-x:auto;
 }
 
-.feedback {
-    background: #000;
-    color: #d4af37;
-    text-align: center;
-    padding: 50px 20px;
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#111;
 }
 
-.feedback h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
+th,td{
+    border:1px solid gold;
+    padding:12px;
+    text-align:center;
 }
 
-.feedback form {
-    max-width: 400px;
-    margin: auto;
+th{
+    background:gold;
+    color:black;
 }
 
-.feedback input,
-.feedback textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #d4af37;
-    background: transparent;
-    color: #fff;
-    border-radius: 8px;
-}
+</style>
 
-.feedback input::placeholder,
-.feedback textarea::placeholder {
-    color: #aaa;
-}
+<script>
 
-.feedback button {
-    background: linear-gradient(145deg, #d4af37, #b8962e);
-    color: #000;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
+const form = document.getElementById("loginForm");
+const entryData = document.getElementById("entryData");
 
-.feedback button:hover {
-    background: gold;
-}
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let feedback = document.getElementById("feedback").value;
+    let email = document.getElementById("email").value;
+
+    let row = `
+        <tr>
+            <td>${name}</td>
+            <td>${feedback}</td>
+            <td>${email}</td>
+        </tr>
+    `;
+
+    entryData.innerHTML += row;
+
+    form.reset();
+
+});
+
+</script>
+
+
 
 /* FOOTER */
 .footer {
@@ -369,19 +365,46 @@ h2{
     </div>
 </div>
 
-<section class="feedback">
-    <h2>Feedback Form</h2>
+<!-- LOGIN FORM -->
+<div class="login-container">
 
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        
-        <input type="email" placeholder="Your Email" required>
-        
-        <textarea placeholder="Your Feedback" rows="5" required></textarea>
-        
-        <button type="submit">Submit Feedback</button>
+    <form id="loginForm">
+        <h2>Customer Entry Form</h2>
+
+        <input type="text" id="name" placeholder="Enter Name" required>
+
+        <input type="text" id="feedback" placeholder="Enter feedback" required>
+
+        <input type="email" id="email" placeholder="Enter Email" required>
+
+        <button type="submit">Submit Entry</button>
     </form>
-</section>
+
+</div>
+
+<!-- DATA SHOW TABLE -->
+<div class="table-container">
+
+    <h2>Customer Entries</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>feedback</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody id="entryData">
+        </tbody>
+
+    </table>
+
+</div>
+
+<style>
+
 
 <footer>
 © 2026 Dholera Property Guide | Designed by You 🚀
