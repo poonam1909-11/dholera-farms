@@ -180,4 +180,42 @@ function showData(){
     });
 
 }
+<script>
+const form = document.getElementById("loginForm");
+const entryData = document.getElementById("entryData");
+
+let customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+displayData();
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+    const email = document.getElementById("email").value;
+
+    customers.push({ name, mobile, email });
+
+    localStorage.setItem("customers", JSON.stringify(customers));
+
+    displayData();
+
+    form.reset();
+});
+
+function displayData() {
+    entryData.innerHTML = "";
+
+    customers.forEach((customer, index) => {
+        entryData.innerHTML += `
+        <tr>
+            <td>${customer.name}</td>
+            <td>${customer.mobile}</td>
+            <td>${customer.email}</td>
+        </tr>
+        `;
+    });
+}
+</script>
 </script>
