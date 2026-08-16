@@ -483,6 +483,166 @@ h2{
         font-size: 13px;
         padding: 7px 10px;
     }
+    /* =========================
+   MOBILE RESPONSIVE TABLE
+========================= */
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+
+    margin: 20px auto;
+
+    border-radius: 10px;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Table */
+
+.comparison-table {
+
+    width: 100%;
+
+    min-width: 650px;
+
+    border-collapse: collapse;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 17px;
+}
+
+
+/* Table Header */
+
+.comparison-table th {
+
+    background: #ffd21c;
+
+    color: #000;
+
+    padding: 16px 20px;
+
+    border: 1px solid #333;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    white-space: nowrap;
+}
+
+
+/* Table Cells */
+
+.comparison-table td {
+
+    padding: 16px 20px;
+
+    border: 1px solid #333;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* First Column */
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+
+    position: sticky;
+
+    left: 0;
+
+    z-index: 2;
+
+    min-width: 150px;
+}
+
+
+/* Header First Column */
+
+.comparison-table th:first-child {
+
+    background: #ffd21c;
+
+    z-index: 3;
+}
+
+
+/* Body First Column */
+
+.comparison-table td:first-child {
+
+    background: #111;
+
+    font-weight: 600;
+}
+
+
+/* Hover */
+
+.comparison-table tbody tr:hover td {
+
+    background: #1e1e1e;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .table-container {
+
+        width: calc(100vw - 30px);
+
+        margin-left: auto;
+        margin-right: auto;
+
+        overflow-x: auto;
+    }
+
+
+    .comparison-table {
+
+        min-width: 650px;
+
+        font-size: 15px;
+    }
+
+
+    .comparison-table th {
+
+        padding: 13px 18px;
+
+        font-size: 16px;
+    }
+
+
+    .comparison-table td {
+
+        padding: 13px 18px;
+
+        font-size: 15px;
+    }
+
+
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+
+        min-width: 130px;
+    }
+
+}
 }
 </style>
 </head>
