@@ -804,8 +804,487 @@ body {
 
         font-size: 16px;
     }
+    /* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background: #000;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 15px 10px 20px;
+    background: #000;
+    border-bottom: 3px solid #ffd21c;
+}
+
+.logo,
+.logo h1,
+header h1 {
+    color: #ffd21c;
+    font-size: clamp(32px, 8vw, 55px);
+    margin: 5px 0 15px;
+    text-align: center;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd21c,
+        #fff0a0
+    );
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 30px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+main,
+.container,
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+
+/* =========================================
+   STATISTICS SECTION
+========================================= */
+
+.stats-section,
+.stats-container,
+.features {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    padding: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #c9a400,
+        #ffd21c
+    );
+
+    border-radius: 25px;
+
+    margin: 30px auto;
+}
+
+
+/* Individual card */
+
+.stat-card,
+.feature-card {
+    min-width: 0;
+
+    background: #111;
+
+    border-radius: 18px;
+
+    padding: 30px 18px;
+
+    text-align: center;
+
+    color: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.45);
+}
+
+
+.stat-card .icon,
+.feature-card .icon {
+    font-size: 55px;
+
+    color: #ffd21c;
+
+    margin-bottom: 20px;
+}
+
+
+.stat-card h2,
+.feature-card h2 {
+
+    color: #ffd21c;
+
+    font-size: clamp(25px, 3vw, 40px);
+
+    line-height: 1.2;
+
+    margin: 10px 0;
+}
+
+
+.stat-card p,
+.feature-card p {
+
+    color: #ddd;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    margin: 0;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   INVESTOR SECTION
+========================================= */
+
+.investors-section,
+.investor-section {
+
+    width: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #c9a400,
+        #ffd21c
+    );
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    margin: 40px auto;
+}
+
+
+.investors-section h2,
+.investor-section h2 {
+
+    color: #000;
+
+    text-align: center;
+
+    font-size: clamp(26px, 4vw, 42px);
+
+    line-height: 1.2;
+
+    margin-bottom: 30px;
+}
+
+
+/* Logo box */
+
+.investor-logos,
+.logos-container {
+
+    width: 100%;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    align-items: center;
+
+    justify-items: center;
+}
+
+
+.investor-logos img,
+.logos-container img {
+
+    width: 100%;
+
+    max-width: 180px;
+
+    height: 90px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+
+    /* Header */
+
+    header {
+        padding: 10px 8px 15px;
+    }
+
+
+    .logo,
+    .logo h1,
+    header h1 {
+
+        font-size: 38px;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* Navigation */
+
+    nav {
+
+        gap: 8px;
+
+        flex-wrap: wrap;
+    }
+
+
+    nav a {
+
+        padding: 9px 16px;
+
+        font-size: 17px;
+    }
+
+
+    /* Main */
+
+    main,
+    .container,
+    .main-container {
+
+        width: 100%;
+
+        padding: 20px 12px;
+    }
+
+
+    /* =================================
+       STAT CARDS → 2 x 2
+    ================================= */
+
+    .stats-section,
+    .stats-container,
+    .features {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+        padding: 25px 15px;
+
+        border-radius: 20px;
+    }
+
+
+    .stat-card,
+    .feature-card {
+
+        width: 100%;
+
+        min-height: 230px;
+
+        padding: 20px 10px;
+
+        border-radius: 15px;
+    }
+
+
+    .stat-card .icon,
+    .feature-card .icon {
+
+        font-size: 42px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .stat-card h2,
+    .feature-card h2 {
+
+        font-size: 25px;
+
+        line-height: 1.15;
+
+        word-break: normal;
+
+        overflow-wrap: break-word;
+    }
+
+
+    .stat-card p,
+    .feature-card p {
+
+        font-size: 15px;
+
+        line-height: 1.35;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =================================
+       INVESTORS
+    ================================= */
+
+    .investors-section,
+    .investor-section {
+
+        padding: 25px 15px;
+
+        margin-top: 25px;
+
+        border-radius: 20px;
+    }
+
+
+    .investors-section h2,
+    .investor-section h2 {
+
+        font-size: 27px;
+
+        line-height: 1.25;
+
+        margin-bottom: 20px;
+    }
+
+
+    .investor-logos,
+    .logos-container {
+
+        padding: 20px 10px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+
+        border-radius: 20px;
+    }
+
+
+    .investor-logos img,
+    .logos-container img {
+
+        max-width: 130px;
+
+        height: 70px;
+    }
 
 }
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+
+    nav a {
+
+        padding: 8px 12px;
+
+        font-size: 15px;
+    }
+
+
+    .stats-section,
+    .stats-container,
+    .features {
+
+        gap: 10px;
+
+        padding: 18px 10px;
+    }
+
+
+    .stat-card,
+    .feature-card {
+
+        min-height: 210px;
+
+        padding: 15px 8px;
+    }
+
+
+    .stat-card h2,
+    .feature-card h2 {
+
+        font-size: 22px;
+    }
+
+
+    .stat-card p,
+    .feature-card p {
+
+        font-size: 14px;
+    }
+
+
+    .investors-section h2,
+    .investor-section h2 {
+
+        font-size: 24px;
+    }   
 }
 </style>
 </head>
