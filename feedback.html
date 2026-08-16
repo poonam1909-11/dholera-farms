@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Feedback</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #000000,
+                #151515,
+                #292929
+            );
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           FEEDBACK FORM
+        ========================= */
+
+        .feedback-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            background: #111111;
+            border-radius: 20px;
+            border: 1px solid #d4af37;
+
+            box-shadow:
+                0 0 30px rgba(212, 175, 55, 0.20);
+        }
+
+
+        .feedback-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .feedback-header h1 {
+            color: #d4af37;
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .feedback-header p {
+            color: #aaaaaa;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           INPUT GROUP
+        ========================= */
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           INPUTS
+        ========================= */
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+
+            width: 100%;
+
+            padding: 13px 15px;
+
+            border-radius: 10px;
+
+            border: 1px solid #555555;
+
+            background: #1c1c1c;
+
+            color: white;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+
+            border-color: #d4af37;
+
+            box-shadow:
+                0 0 10px rgba(212, 175, 55, 0.25);
+        }
+
+
+        .input-group textarea {
+            resize: vertical;
+        }
+
+
+        .input-group select option {
+            background: #111111;
+            color: white;
+        }
+
+
+        /* =========================
+           STAR RATING
+        ========================= */
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 4px;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+
+            font-size: 35px;
+
+            color: #555555;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+
+            color: #d4af37;
+
+            transform: scale(1.1);
+        }
+
+        .rating input:checked ~ label {
+            color: #d4af37;
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
+
+        .submit-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b8860b,
+                    #d4af37,
+                    #f5d76e
+                );
+
+            color: #000000;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(212, 175, 55, 0.35);
+        }
+
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================= */
+
+        .success-message {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            background: #163d24;
+
+            border: 1px solid #2e9d55;
+
+            color: #7dff9d;
+
+            text-align: center;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FEEDBACK LIST
+        ========================= */
+
+        .feedback-list-section {
+
+            margin-top: 60px;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+
+            color: #d4af37;
+
+            font-size: 30px;
+        }
+
+        .section-title p {
+
+            color: #aaaaaa;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           FEEDBACK CARD
+        ========================= */
+
+        .feedback-card {
+
+            background: #111111;
+
+            border: 1px solid #333333;
+
+            border-left: 4px solid #d4af37;
+
+            border-radius: 15px;
+
+            padding: 22px;
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.4);
+
+            transition: 0.3s;
+        }
+
+        .feedback-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #d4af37;
+        }
+
+
+        /* Card Top */
+
+        .card-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        /* User Information */
+
+        .user-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .user-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b8860b,
+                    #f5d76e
+                );
+
+            color: #000000;
+
+            font-weight: bold;
+
+            font-size: 20px;
+        }
+
+
+        .user-info h3 {
+
+            color: white;
+
+            margin-bottom: 3px;
+        }
+
+        .user-info small {
+
+            color: #888888;
+        }
+
+
+        /* Delete Button */
+
+        .delete-btn {
+
+            background: transparent;
+
+            border: none;
+
+            color: #ff5555;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            width: auto;
+
+            padding: 5px;
+
+        }
+
+        .delete-btn:hover {
+
+            color: red;
+
+            transform: scale(1.2);
+        }
+
+
+        /* Stars */
+
+        .stars {
+
+            color: #d4af37;
+
+            font-size: 22px;
+
+            margin-top: 15px;
+        }
+
+
+        /* Service */
+
+        .service {
+
+            margin-top: 10px;
+
+            color: #aaaaaa;
+
+            font-size: 14px;
+        }
+
+        .service strong {
+
+            color: #d4af37;
+        }
+
+
+        /* Message */
+
+        .message {
+
+            color: #dddddd;
+
+            line-height: 1.6;
+
+            margin-top: 12px;
+
+            font-size: 15px;
+        }
+
+
+        /* Date */
+
+        .date {
+
+            color: #777777;
+
+            font-size: 12px;
+
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           NO FEEDBACK
+        ========================= */
+
+        .no-feedback {
+
+            text-align: center;
+
+            padding: 40px;
+
+            background: #111111;
+
+            border-radius: 15px;
+
+            border: 1px dashed #555555;
+
+            color: #aaaaaa;
+        }
+
+        .no-feedback p {
+
+            font-size: 20px;
+
+            color: #d4af37;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            .feedback-container {
+                padding: 25px 18px;
+            }
+
+            .feedback-header h1 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 25px;
+            }
+
+            .feedback-card {
+                padding: 18px;
+            }
+
+            .user-info h3 {
+                font-size: 15px;
+            }
+
+            .rating label {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="main-container">
+
+
+    <!-- ==================================
+         FEEDBACK FORM
+    =================================== -->
+
+    <div class="feedback-container">
+
+        <div class="feedback-header">
+
+            <h1>💬 Customer Feedback</h1>
+
+            <p>
+                We value your opinion
+            </p>
+
+        </div>
+
+
+        <form id="feedbackForm">
+
+
+            <!-- NAME -->
+
+            <div class="input-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div class="input-group">
+
+                <label for="service">
+                    Service
+                </label>
+
+                <select id="service" required>
+
+                    <option value="">
+                        Select Service
+                    </option>
+
+                    <option value="Website">
+                        Website
+                    </option>
+
+                    <option value="Real Estate">
+                        Real Estate
+                    </option>
+
+                    <option value="Customer Service">
+                        Customer Service
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- RATING -->
+
+            <div class="input-group">
+
+                <label>
+                    Your Rating
+                </label>
+
+
+                <div class="rating">
+
+
+                    <input
+                        type="radio"
+                        id="star5"
+                        name="rating"
+                        value="5"
+                        required>
+
+                    <label for="star5">
+                        ★
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="star4"
+                        name="rating"
+                        value="4">
+
+                    <label for="star4">
+                        ★
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="star3"
+                        name="rating"
+                        value="3">
+
+                    <label for="star3">
+                        ★
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="star2"
+                        name="rating"
+                        value="2">
+
+                    <label for="star2">
+                        ★
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="star1"
+                        name="rating"
+                        value="1">
+
+                    <label for="star1">
+                        ★
+                    </label>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="input-group">
+
+                <label for="message">
+                    Your Feedback
+                </label>
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Write your feedback here..."
+                    required></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Submit Feedback
+
+            </button>
+
+
+        </form>
+
+
+        <!-- SUCCESS -->
+
+        <div
+            id="successMessage"
+            class="success-message">
+
+            ✅ Thank you!
+            Your feedback has been submitted successfully.
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================
+         CUSTOMER REVIEWS
+    =================================== -->
+
+    <section class="feedback-list-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                ⭐ Customer Reviews
+            </h2>
+
+            <p>
+                See what our customers say
+            </p>
+
+        </div>
+
+
+        <div id="feedbackList">
+
+            <!-- Feedback will appear here -->
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+
+<script>
+
+
+    /* ==================================
+       GET HTML ELEMENTS
+    =================================== */
+
+    const feedbackForm =
+        document.getElementById("feedbackForm");
+
+    const feedbackList =
+        document.getElementById("feedbackList");
+
+    const successMessage =
+        document.getElementById("successMessage");
+
+
+
+    /* ==================================
+       LOAD FEEDBACK
+    =================================== */
+
+    function loadFeedback() {
+
+
+        const feedbacks =
+            JSON.parse(
+                localStorage.getItem("feedbacks")
+            ) || [];
+
+
+        feedbackList.innerHTML = "";
+
+
+        /* No Feedback */
+
+        if (feedbacks.length === 0) {
+
+
+            feedbackList.innerHTML = `
+
+                <div class="no-feedback">
+
+                    <p>
+                        📭 No feedback yet
+                    </p>
+
+                    <span>
+                        Be the first person
+                        to give feedback!
+                    </span>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+
+        /* Display Feedback */
+
+        feedbacks.forEach(
+            (feedback, index) => {
+
+
+                let stars = "";
+
+
+                for (
+                    let i = 1;
+                    i <= 5;
+                    i++
+                ) {
+
+                    if (
+                        i <= feedback.rating
+                    ) {
+
+                        stars += "★";
+
+                    } else {
+
+                        stars += "☆";
+
+                    }
+
+                }
+
+
+
+                /* First Letter */
+
+                const firstLetter =
+                    feedback.name
+                    .charAt(0)
+                    .toUpperCase();
+
+
+
+                /* Create Card */
+
+                const card =
+                    document.createElement("div");
+
+
+                card.className =
+                    "feedback-card";
+
+
+                card.innerHTML = `
+
+
+                    <div class="card-top">
+
+
+                        <div class="user-info">
+
+
+                            <div class="user-icon">
+
+                                ${firstLetter}
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    ${escapeHTML(feedback.name)}
+                                </h3>
+
+                                <small>
+                                    ${escapeHTML(feedback.email)}
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <button
+                            class="delete-btn"
+                            onclick="deleteFeedback(${index})"
+                            title="Delete Feedback">
+
+                            🗑️
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <div class="stars">
+
+                        ${stars}
+
+                    </div>
+
+
+
+                    <div class="service">
+
+                        <strong>
+                            Service:
+                        </strong>
+
+                        ${escapeHTML(feedback.service)}
+
+                    </div>
+
+
+
+                    <p class="message">
+
+                        ${escapeHTML(feedback.message)}
+
+                    </p>
+
+
+
+                    <div class="date">
+
+                        📅 ${feedback.date}
+
+                    </div>
+
+
+                `;
+
+
+                feedbackList.appendChild(card);
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================
+       SECURITY FUNCTION
+    =================================== */
+
+    function escapeHTML(text) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+
+
+    /* ==================================
+       SUBMIT FEEDBACK
+    =================================== */
+
+    feedbackForm.addEventListener(
+        "submit",
+        function(event) {
+
+
+            event.preventDefault();
+
+
+
+            /* Get Values */
+
+            const name =
+                document
+                .getElementById("name")
+                .value
+                .trim();
+
+
+            const email =
+                document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+            const service =
+                document
+                .getElementById("service")
+                .value;
+
+
+            const rating =
+                document
+                .querySelector(
+                    'input[name="rating"]:checked'
+                )
+                .value;
+
+
+            const message =
+                document
+                .getElementById("message")
+                .value
+                .trim();
+
+
+
+            /* Create Feedback */
+
+            const feedback = {
+
+                name: name,
+
+                email: email,
+
+                service: service,
+
+                rating: Number(rating),
+
+                message: message,
+
+                date:
+                    new Date()
+                    .toLocaleDateString(
+                        "en-IN"
+                    )
+
+            };
+
+
+
+            /* Get Old Feedback */
+
+            let feedbacks =
+                JSON.parse(
+                    localStorage.getItem(
+                        "feedbacks"
+                    )
+                ) || [];
+
+
+
+            /* Add New Feedback */
+
+            feedbacks.unshift(
+                feedback
+            );
+
+
+
+            /* Save */
+
+            localStorage.setItem(
+                "feedbacks",
+                JSON.stringify(
+                    feedbacks
+                )
+            );
+
+
+
+            /* Reset Form */
+
+            feedbackForm.reset();
+
+
+
+            /* Show Success */
+
+            successMessage.style.display =
+                "block";
+
+
+
+            /* Refresh List */
+
+            loadFeedback();
+
+
+
+            /* Hide Success */
+
+            setTimeout(
+                function() {
+
+                    successMessage.style.display =
+                        "none";
+
+                },
+                3000
+            );
+
+        }
+    );
+
+
+
+    /* ==================================
+       DELETE FEEDBACK
+    =================================== */
+
+    function deleteFeedback(index) {
+
+
+        const confirmDelete =
+            confirm(
+                "Are you sure you want to delete this feedback?"
+            );
+
+
+        if (!confirmDelete) {
+
+            return;
+
+        }
+
+
+
+        let feedbacks =
+            JSON.parse(
+                localStorage.getItem(
+                    "feedbacks"
+                )
+            ) || [];
+
+
+
+        feedbacks.splice(
+            index,
+            1
+        );
+
+
+
+        localStorage.setItem(
+            "feedbacks",
+            JSON.stringify(
+                feedbacks
+            )
+        );
+
+
+
+        loadFeedback();
+
+    }
+
+
+
+    /* ==================================
+       LOAD DATA WHEN PAGE OPENS
+    =================================== */
+
+    loadFeedback();
+
+
+</script>
+
+
+</body>
+</html>
